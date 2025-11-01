@@ -22,7 +22,7 @@ await import("./utils/googleAuth.js");
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: ['http://localhost:5173',"https://drift-your-rideing-partner.netlify.app"],
   credentials: true,
 }));
 app.use(express.json());
