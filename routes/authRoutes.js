@@ -3,7 +3,7 @@ import { registerUser,loginUser } from '../controllers/userController.js'
 import passport from 'passport'
 import generateToken from '../utils/generateToken.js';
 import { signup,login } from '../controllers/authController.js';
-
+const redirectURL = process.env.NODE_ENV==='production'?'https://drift-your-rideing-partner.netlify.app/':'http://localhost:5173';
 const router = express.Router();
 
 
@@ -18,7 +18,7 @@ router.get("/google/callback",passport.authenticate("google",{failureRedirect:"/
 (req,res)=>{
     const token = generateToken(req.user._id);
     res.redirect(
-  `http://localhost:5173/auth/success?token=${token}&name=${encodeURIComponent(
+  `${redirectURL}/auth/success?token=${token}&name=${encodeURIComponent(
     req.user.name
   )}&email=${encodeURIComponent(req.user.email)}`);
 }
