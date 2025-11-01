@@ -4,7 +4,7 @@ dotenv.config({ path: path.resolve('./.env') });
 import express from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import connectDb from './database/db.js';
+import connectDb from './tempDatabase/db.js';
 import userRoutes from './routes/userRoutes.js';
 import cookieParser from 'cookie-parser';
 import captainRoutes from '../backend/routes/captainRoutes.js';
