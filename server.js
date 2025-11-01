@@ -7,7 +7,7 @@ import cors from 'cors';
 import connectDb from './tempDatabase/db.js';
 import userRoutes from './routes/userRoutes.js';
 import cookieParser from 'cookie-parser';
-import captainRoutes from '../backend/routes/captainRoutes.js';
+import captainRoutes from './routes/captainRoutes.js';
 import passport from 'passport';
 import session from 'express-session';
 import authRoutes from './routes/authRoutes.js'
